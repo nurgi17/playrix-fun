@@ -1,0 +1,93 @@
+@import 'config.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cera Pro', sans-serif;
+}
+
+.rounded-angels {
+  border-bottom-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.rounded-angels-big {
+  border-bottom-left-radius: 120px;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.bottom-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.bottom-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.bottom-fade-enter-from,
+.bottom-fade-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nested-enter-active .inner,
+.nested-leave-active .inner {
+  transition: all 0.3s ease-in-out;
+}
+
+.nested-enter-from .inner,
+.nested-leave-to .inner {
+  transform: translateX(30px);
+  opacity: 0;
+}
