@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/playrix-fun/sw.js', { scope: '/playrix-fun/' })})}
