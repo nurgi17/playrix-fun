@@ -19,7 +19,7 @@
           <QuestionTimer :timer="getQuestion[0].timer" />
         </Transition>
         <div class="text-white text-[48px] font-bold text-center mt-[50px]">
-          {{ `Выполни задание и получи ${getCategory.point}` }}
+          {{ `Выполни задание и получи ${getCategory!.point}` }}
         </div>
       </div>
     </Transition>
@@ -58,7 +58,7 @@ const startRandomizingText = () => {
 
   setTimeout(() => {
     clearInterval(interval)
-    displayedText.value = getQuestion.value[0]?.question
+    displayedText.value = getQuestion.value ? getQuestion.value[0]?.question : ''
     loading.value = false
   }, 1500)
 }
