@@ -36,7 +36,7 @@ const categories: ICategory[] = [
   {
     id: 2,
     name: 'СЛОЖНЫЙ ВЫБОР',
-    point: 30,
+    point: 20,
     questions: [
       {
         id: 1,
