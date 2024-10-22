@@ -15,7 +15,7 @@
     </Transition>
     <Transition name="bottom-fade" appear>
       <div v-if="getQuestion" class="flex flex-col items-center mt-[131px]">
-        <Transition v-if="!loading1" name="bounce" appear>
+        <Transition v-if="!loading1 && getQuestion[0].timer > 0" name="bounce" appear>
           <QuestionTimer :timer="getQuestion[0].timer" />
         </Transition>
         <div class="text-white text-[48px] font-bold text-center mt-[50px]">

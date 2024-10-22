@@ -22,7 +22,7 @@ export function useResultService() {
   const text2 = computed(() => {
     switch (route.params.type) {
       case IResultType.Correct:
-        return 'Правильный ответ!'
+        return ''
       case IResultType.Timeout:
         return 'Вы не успели выполнить задание вовремя!'
       default:

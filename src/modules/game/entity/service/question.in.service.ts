@@ -16,10 +16,16 @@ export function useQuestionInService() {
 
   function done() {
     gameStore.setGamePoints()
-    router.push({
-      name: 'result',
-      params: { type: IResultType.Correct }
-    })
+    if (getQuestion.value && getQuestion.value[0].timer > 0) {
+      router.push({
+        name: 'result',
+        params: { type: IResultType.Correct }
+      })
+    } else {
+      router.push({
+        name: 'start'
+      })
+    }
   }
 
   return {

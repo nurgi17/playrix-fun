@@ -3,7 +3,7 @@
     <div
       v-for="(category, index) in categories"
       :key="category.id"
-      class="w-[910px] h-[250px] rounded-angels-big font-bold text-center text-white hover:bg-[#6450A2] active:bg-[#6450A2] uppercase cursor-pointer"
+      class="w-[910px] h-[250px] rounded-angels-big font-bold text-center text-white active:bg-[#6450A2] active:bg-[#6450A2] uppercase cursor-pointer"
       :class="{ 'bg-[#2AC4F4]': index % 2 === 0, 'bg-[#EE2866]': index % 2 !== 0 }"
       @click="goToQuestion(category)"
     >
