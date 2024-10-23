@@ -48,8 +48,13 @@ const startRandomizingText = () => {
     count = 0
   const interval = setInterval(() => {
     count++
-    displayedText.value = getQuestion.value[index].question
-    index = (index + 1) % getQuestion.value.length
+    if (getQuestion.value && getQuestion.value[index]) {
+      displayedText.value = getQuestion.value[index].question
+      index = (index + 1) % getQuestion.value.length
+    } else {
+      displayedText.value = ''
+      index = 0
+    }
     if (count === 1) {
       loading1.value = false
     }
