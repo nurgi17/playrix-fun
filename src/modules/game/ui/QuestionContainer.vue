@@ -39,7 +39,6 @@ import Badge from '../../../shared/ui/badge/Badge.vue'
 import Button from '../../../shared/ui/button/Button.vue'
 
 const displayedText = ref(''),
-  randomTexts = ['Рандомайзер заданий', 'Загрузка...', 'Генерация задания...'],
   { getQuestion, getCategory, done } = useQuestionInService(),
   loading = ref(true),
   loading1 = ref(true)
@@ -49,12 +48,12 @@ const startRandomizingText = () => {
     count = 0
   const interval = setInterval(() => {
     count++
-    displayedText.value = randomTexts[index]
-    index = (index + 1) % randomTexts.length
+    displayedText.value = getQuestion.value[index].question
+    index = (index + 1) % getQuestion.value.length
     if (count === 1) {
       loading1.value = false
     }
-  }, 400)
+  }, 150)
 
   setTimeout(() => {
     clearInterval(interval)
