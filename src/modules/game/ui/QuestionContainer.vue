@@ -9,7 +9,7 @@
       <Badge :category="getCategory" />
     </Transition>
     <Transition name="bounce" appear @after-enter="startRandomizingText">
-      <div class="text-white text-[64px] font-bold text-center mt-[100px]">
+      <div class="text-white text-[56px] font-bold text-center mt-[100px] max-w-[958px]">
         {{ displayedText }}
       </div>
     </Transition>
@@ -24,7 +24,7 @@
       </div>
     </Transition>
     <Transition v-if="!loading" name="bottom-fade" appear>
-      <Button class="pt-[185px]" :text="'готово'" @click="done" />
+      <Button class="pt-[165px]" :text="'готово'" @click="done" />
     </Transition>
   </div>
 </template>
