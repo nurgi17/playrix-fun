@@ -2,8 +2,10 @@ import { ref, computed, watch } from 'vue'
 import type { ITimer } from '../model/DTO/game.dto'
 import { IResultType } from '../model/DTO/game.dto'
 import { useRouter } from 'vue-router'
+import { useGameStore } from '../model/store/game.store'
 export function userQuestionTimerService(timer: number) {
-  const router = useRouter()
+  const router = useRouter(),
+    gameStore = useGameStore()
 
   const inter = ref<ReturnType<typeof setTimeout>>(),
     seconds = ref(timer),
@@ -21,6 +23,7 @@ export function userQuestionTimerService(timer: number) {
     () => {
       if (seconds.value < 0) {
         stopTimer()
+        gameStore.setBaseValues()
         router.push({ name: 'result', params: { type: IResultType.Timeout } })
       }
     }
